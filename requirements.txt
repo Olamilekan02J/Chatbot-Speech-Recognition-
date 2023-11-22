@@ -3,6 +3,7 @@ matplotlib-inline==0.1.6
 nltk==3.8.1
 numpy==1.20.3
 opencv-python==4.8.1.78
+pandas==2.1.2
 packaging==23.2
 plotly==5.18.0
 PyAudio==0.2.14
