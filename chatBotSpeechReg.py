@@ -1,7 +1,6 @@
 
 import streamlit as st
 import speech_recognition as sr
-import sounddevice as sd
 import pyttsx3
 import time
 import pandas as pd
@@ -83,18 +82,10 @@ def bot_response(user_input):
 def transcribe_speech():
     # Initialize recognizer class
     r = sr.Recognizer()
-    portaudio_path = "C:pa_stable_v190700_20210406.tgz "  # Replace with the actual path to the PortAudio DLL
 
-    with sd.Microphone(device=0, channels=1, dtype=np.int16, samplerate=44100, latency='low', callback=None, blocksize=0, clip_off=False, dither_off=False, never_drop_input=False, prime_output_buffers_using_stream_callback=False, dtype_native=False, latency_samplerate='low', callback_flags=False, callback_file=False, filename=None, channels_exclusive=False, **kwargs):
-        # Set the path to the PortAudio DLL
-        sd.query_devices(device=0, kind='input', includeapi=False, latency='low', extra_settings=None, dtype=None)
-        sd.query_devices(device=0, kind='input', includeapi=False, latency='low', extra_settings=None, dtype=None)
-        sd.query_devices(device=0, kind='input', includeapi=False, latency='low', extra_settings=None, dtype=None)
-        sd.query_devices(device=0, kind='input', includeapi=False, latency='low', extra_settings=None, dtype=None)
-        sd.query_devices(device=0, kind='input', includeapi=False, latency='low', extra_settings=None, dtype=None)
 
     # Reading Microphone as source
-    # with sr.Microphone() as source:
+    with sr.Microphone() as source:
 
         # create a streamlit spinner that shows progress
         with st.spinner(text='Silence pls, Caliberating background noise.....'):
