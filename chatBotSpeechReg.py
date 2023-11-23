@@ -1,6 +1,7 @@
 
 import streamlit as st
 import speech_recognition as sr
+import sounddevice as sd
 import pyttsx3
 import time
 import pandas as pd
